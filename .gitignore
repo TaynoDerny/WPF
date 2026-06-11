@@ -1,0 +1,8 @@
+## Ignore Visual Studio temporary files
+bin/
+obj/
+*.suo
+*.user
+.vs/
+*.sln.docstates
+

@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Project_2.MainWindow"
+        Title="Color Buttons"
+        Width="600" Height="400">
+    
+<Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    
+    <WrapPanel Margin="10" Orientation="Horizontal" MaxWidth="400">
+
+    
+    
+    
+  
+    <Button Content="Navy" Margin="2" Foreground="Navy" Background="White"/>
+    <Button Content="Blue" Margin="2" Foreground="Blue" Background="White"/>
+    <Button Content="Aqua" Margin="2" Foreground="Aqua" Background="White"/>
+    <Button Content="Teal" Margin="2" Foreground="Teal" Background="White"/>
+    <Button Content="Olive" Margin="2" Foreground="Olive" Background="White"/>
+    <Button Content="Green" Margin="2" Foreground="Green" Background="White"/>
+    <Button Content="Lime" Margin="2" Foreground="Lime" Background="White"/>
+    <Button Content="Yellow" Margin="2" Foreground="Yellow" Background="White"/>
+    <Button Content="Orange" Margin="2" Foreground="Orange" Background="White"/>
+    <Button Content="Red" Margin="2" Foreground="Red" Background="White"/>
+    <Button Content="Maroon" Margin="2" Foreground="Maroon" Background="White"/>
+    <Button Content="Fuchsia" Margin="2" Foreground="Fuchsia" Background="White"/>
+    <Button Content="Purple" Margin="2" Foreground="Purple" Background="White"/>
+    <Button Content="Black" Margin="2" Foreground="Black" Background="White"/>
+    <Button Content="Silver" Margin="2" Foreground="Silver" Background="White"/>
+    <Button Content="Gray" Margin="2" Foreground="Gray" Background="White"/>
+    <Button Content="White" Margin="2" Foreground="Black" Background="White"/>
+    
+  </WrapPanel>
+</Grid>
+</Window>

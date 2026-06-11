@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Orders>
+  <Order Id="1" Date="2023-10-27" Customer="Иван Петров">
+    <Item Product="Ноутбук" Price="50000" Quantity="1" />
+    <Item Product="Мышь" Price="1500" Quantity="2" />
+  </Order>
+  <Order Id="2" Date="2023-10-28" Customer="Мария Смирнова">
+    <Item Product="Книга" Price="800" Quantity="3" />
+  </Order>
+</Orders>
