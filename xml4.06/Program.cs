@@ -2,7 +2,7 @@
 using System.Xml;
 using static System.Console;
 
-namespace HomeworkLesson11
+namespace Program
 {
     class Program
     {
