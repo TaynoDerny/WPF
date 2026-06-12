@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Project_2_2.MainWindow"
+        Title="Calculator"
+        Width="200" Height="280"
+        CanResize="False"
+        WindowState="Normal"
+        x:Name="Root">
+
+    <Grid RowDefinitions="Auto, Auto, *, *, *, *, *" ColumnDefinitions="*, *, *, *" Margin="5">
+        
+        <!-- Поле истории (верхнее) -->
+        <TextBox Grid.Row="0" Grid.ColumnSpan="4"
+                 Name="HistoryTextBox"
+                 IsReadOnly="True"
+                 VerticalAlignment="Stretch" Height="30"
+                 HorizontalAlignment="Stretch" Margin="0,0,0,5"
+                 FontSize="14" TextAlignment="Right" />
+
+        <!-- Поле текущего числа (нижнее) -->
+        <TextBox Grid.Row="1" Grid.ColumnSpan="4"
+                 Name="CurrentNumberTextBox"
+                 IsReadOnly="True"
+                 VerticalAlignment="Stretch" Height="40"
+                 HorizontalAlignment="Stretch" Margin="0,0,0,5"
+                 FontSize="24" TextAlignment="Right" />
+
+        <!-- Кнопки (все одинаковые) -->
+        <Button Grid.Row="2" Grid.Column="0" Content="CE" Click="OnClearEntry" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="2" Grid.Column="1" Content="C" Click="OnClearAll" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="2" Grid.Column="2" Content="&lt;" Click="OnBackspace" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="2" Grid.Column="3" Content="/" Click="OnOperator" MinWidth="40" MinHeight="40" />
+
+        <Button Grid.Row="3" Grid.Column="0" Content="7" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="3" Grid.Column="1" Content="8" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="3" Grid.Column="2" Content="9" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="3" Grid.Column="3" Content="*" Click="OnOperator" MinWidth="40" MinHeight="40" />
+
+        <Button Grid.Row="4" Grid.Column="0" Content="4" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="4" Grid.Column="1" Content="5" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="4" Grid.Column="2" Content="6" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="4" Grid.Column="3" Content="-" Click="OnOperator" MinWidth="40" MinHeight="40" />
+
+        <Button Grid.Row="5" Grid.Column="0" Content="1" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="5" Grid.Column="1" Content="2" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="5" Grid.Column="2" Content="3" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="5" Grid.Column="3" Content="+" Click="OnOperator" MinWidth="40" MinHeight="40" />
+
+        <!-- Нижняя строка: . (0), 0 (1), = (занимает 2 и 3 колонки) -->
+        <Button Grid.Row="6" Grid.Column="0" Content="." Click="OnDecimalPoint" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="6" Grid.Column="1" Content="0" Click="OnDigit" MinWidth="40" MinHeight="40" />
+        <Button Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Content="=" Click="OnEquals" MinHeight="40" HorizontalAlignment="Stretch" />
+
+    </Grid>
+
+</Window>
