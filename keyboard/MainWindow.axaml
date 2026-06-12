@@ -1,0 +1,113 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="keyboard.MainWindow"
+        Title="Keyboard Trainer"
+        Width="900" Height="650"
+        KeyDown="OnKeyDown" KeyUp="OnKeyUp"
+        Background="#1E1E1E">
+    
+    <DockPanel Margin="20">
+        <!-- Верхняя панель управления -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="15" Margin="0,0,0,20">
+            <TextBlock Name="SpeedText" Text="Speed: 0 chars/min" Foreground="White" VerticalAlignment="Center"/>
+            <TextBlock Name="FailsText" Text="Fails: 0" Foreground="White" VerticalAlignment="Center"/>
+            <TextBlock Text="Difficulty:" Foreground="White" VerticalAlignment="Center"/>
+            <Slider Name="DifficultySlider" Minimum="10" Maximum="200" Value="50" Width="150" VerticalAlignment="Center"/>
+            <CheckBox Name="CaseSensitiveCheckBox" Content="Case Sensitive" Foreground="White" VerticalAlignment="Center"/>
+            <Button Name="StartButton" Content="Start" Click="OnStartClick" Width="100" HorizontalAlignment="Stretch"/>
+            <Button Name="StopButton" Content="Stop" Click="OnStopClick" IsEnabled="False" Width="100" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+
+        <!-- Текстовые поля для отображения текста и ввода -->
+        <StackPanel DockPanel.Dock="Top" Spacing="10" Margin="0,0,0,20">
+            <Border Background="#2D2D2D" CornerRadius="5" Padding="10">
+                <TextBlock Name="TargetText" Text="Нажмите Start" Foreground="#00CC00" FontSize="16" TextWrapping="Wrap" FontFamily="Consolas"/>
+            </Border>
+            <Border Background="#2D2D2D" CornerRadius="5" Padding="10">
+                <TextBlock Name="UserInputDisplay" Text="" Foreground="White" FontSize="16" TextWrapping="Wrap" FontFamily="Consolas"/>
+            </Border>
+        </StackPanel>
+
+        <!-- Клавиатура -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+            <!-- Ряд 1: цифры -->
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="14" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
+                <Button Name="D1" Content="1" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D2" Content="2" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D3" Content="3" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D4" Content="4" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D5" Content="5" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D6" Content="6" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D7" Content="7" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D8" Content="8" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D9" Content="9" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D0" Content="0" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemMinus" Content="-" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemPlus" Content="=" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="Backspace" Content="⌫" Width="90" Height="45" Click="VirtualKey_Click"/>
+            </StackPanel>
+
+            <!-- Ряд 2: буквы Q-P -->
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="14" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4" Margin="0,5,0,0">
+                <Button Name="Tab" Content="Tab" Width="70" Height="45" IsEnabled="False"/>
+                <Button Name="Q" Content="Q" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="W" Content="W" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="E" Content="E" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="R" Content="R" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="T" Content="T" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="Y" Content="Y" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="U" Content="U" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="I" Content="I" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="O" Content="O" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="P" Content="P" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemOpenBrackets" Content="[" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemCloseBrackets" Content="]" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemBackslash" Content="\\" Width="45" Height="45" Click="VirtualKey_Click"/>
+            </StackPanel>
+
+            <!-- Ряд 3: A-L -->
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="14" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4" Margin="0,5,0,0">
+                <Button Name="CapsLock" Content="Caps" Width="80" Height="45" Click="VirtualKey_Click" IsEnabled="True"/>
+                <Button Name="A" Content="A" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="S" Content="S" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="D" Content="D" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="F" Content="F" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="G" Content="G" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="H" Content="H" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="J" Content="J" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="K" Content="K" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="L" Content="L" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemSemicolon" Content=";" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemQuotes" Content="'" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="Enter" Content="Enter" Width="90" Height="45" Click="VirtualKey_Click"/>
+            </StackPanel>
+
+            <!-- Ряд 4: Z-M -->
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="14" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4" Margin="0,5,0,0">
+                <Button Name="LeftShift" Content="Shift" Width="90" Height="45" Click="VirtualKey_Click" IsEnabled="True"/>
+                <Button Name="Z" Content="Z" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="X" Content="X" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="C" Content="C" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="V" Content="V" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="B" Content="B" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="N" Content="N" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="M" Content="M" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemComma" Content="," Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemPeriod" Content="." Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="OemQuestion" Content="/" Width="45" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="RightShift" Content="Shift" Width="90" Height="45" Click="VirtualKey_Click" IsEnabled="True"/>
+            </StackPanel>
+
+            <!-- Ряд 5: пробел и модификаторы -->
+            <StackPanel Grid.Row="4" Grid.ColumnSpan="14" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4" Margin="0,5,0,0">
+                <Button Name="CtrlLeft" Content="Ctrl" Width="70" Height="45" IsEnabled="False"/>
+                <Button Name="WinLeft" Content="Win" Width="70" Height="45" IsEnabled="False"/>
+                <Button Name="AltLeft" Content="Alt" Width="70" Height="45" IsEnabled="False"/>
+                <Button Name="Space" Content="Space" Width="250" Height="45" Click="VirtualKey_Click"/>
+                <Button Name="AltRight" Content="Alt" Width="70" Height="45" IsEnabled="False"/>
+                <Button Name="WinRight" Content="Win" Width="70" Height="45" IsEnabled="False"/>
+                <Button Name="CtrlRight" Content="Ctrl" Width="70" Height="45" IsEnabled="False"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
